@@ -57,8 +57,8 @@ function child_theme_sidebar_area_classes( $classes ) {
 
 function child_theme_loop_pagination_args( $args ) {
 
-		$args['prev_text'] = __( '&laquo;', 'hybopress' );
-		$args['next_text'] = __( '&raquo;', 'hybopress' );
+		$args['prev_text'] = __( '&laquo;', 'author' );
+		$args['next_text'] = __( '&raquo;', 'author' );
 
 		return $args;
 
@@ -143,7 +143,7 @@ function child_theme_do_pings() {
 
 		echo '<div id="pings" class="comments entry-pings clearfix">';
 
-			echo apply_filters( 'hybopress_title_pings', __( '<h3>Trackbacks</h3>', 'hybopress' ) );
+			echo apply_filters( 'hybopress_title_pings', __( '<h3>Trackbacks</h3>', 'author' ) );
 			echo '<ol class="ping-list list-unstyled comment-list">';
 				do_action( 'hybopress_list_pings' );
 			echo '</ol>';
@@ -173,7 +173,7 @@ function child_theme_do_meta_tags(){
 		return;
 	}
 
-	hybrid_post_terms( array( 'taxonomy' => 'post_tag', 'text' => __( 'Tagged %s', 'hybopress' ), 'before' => '' ) );
+	hybrid_post_terms( array( 'taxonomy' => 'post_tag', 'text' => __( 'Tagged %s', 'author' ), 'before' => '' ) );
 
 }
 
