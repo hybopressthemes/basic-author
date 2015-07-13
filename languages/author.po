@@ -1,0 +1,51 @@
+# Translation of Author in English
+# This file is distributed under the same license as the Author package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: +0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/1.0-alpha-1000\n"
+"Project-Id-Version: Author\n"
+
+#. Author URI of the plugin/theme
+msgid "http://hybopressthemes.com"
+msgstr ""
+
+#: comment/comment.php:21 comment/ping.php:15
+msgid "%s ago"
+msgstr ""
+
+#: comment/comment.php:27 comment/ping.php:21
+msgid "Permalink"
+msgstr ""
+
+#: comment/comment.php:42
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:62
+msgid "&laquo;"
+msgstr ""
+
+#: functions.php:63
+msgid "&raquo;"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Basic Elegant"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://hybopressthemes.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Hybopress Basic child theme."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "HyBoPress"
+msgstr ""
