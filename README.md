@@ -1,2 +1,2 @@
-# basic-author
-Child Theme for Hybopress Basic
+# Basic Author
+Child Theme for Hybopress Basic.

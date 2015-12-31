@@ -3,20 +3,19 @@
 add_action( 'after_setup_theme', 'child_theme_setup_before_parent', 0 );
 add_action( 'after_setup_theme', 'child_theme_setup1', 11 );
 add_action( 'after_setup_theme', 'child_theme_setup2', 14 );
-add_filter( 'loop_pagination_args', 'child_theme_loop_pagination_args' );
+add_filter( 'hybopress_posts_pagination_args', 'child_theme_posts_pagination_args' );
 add_filter( 'hybopress_content_area_classes', 'child_theme_content_area_classes' );
 
 add_action( 'wp', 'child_theme_conditional_setup' );
 
 function child_theme_conditional_setup() {
 	if ( is_single() ) {
-
-	//setting priority to 18, so it executes after portfolio closing wrapper
-	remove_action( 'hybopress_after_endwhile', 'hybopress_posts_nav', 18 );
-	//add_action( 'hybopress_after_endwhile', 'child_theme_posts_nav', 18 );
-	//add_action( 'hybopress_after_endwhile', 'hybopress_posts_nav', 18 );
-	add_action( 'hybopress_after_entry', 'hybopress_posts_nav', 6 );
-	//
+		//setting priority to 18, so it executes after portfolio closing wrapper
+		remove_action( 'hybopress_after_endwhile', 'hybopress_posts_nav', 18 );
+		//add_action( 'hybopress_after_endwhile', 'child_theme_posts_nav', 18 );
+		//add_action( 'hybopress_after_endwhile', 'hybopress_posts_nav', 18 );
+		add_action( 'hybopress_after_entry', 'hybopress_posts_nav', 6 );
+		//
 	}
 
 	if( is_singular() ) {
@@ -42,7 +41,6 @@ function child_theme_content_area_classes( $classes ) {
 
 add_filter( 'hybopress_sidebar_area_classes', 'child_theme_sidebar_area_classes' );
 
-
 function child_theme_sidebar_area_classes( $classes ) {
 
 	foreach( $classes as $key => $value ) {
@@ -55,7 +53,7 @@ function child_theme_sidebar_area_classes( $classes ) {
 }
 
 
-function child_theme_loop_pagination_args( $args ) {
+function child_theme_posts_pagination_args( $args ) {
 
 		$args['prev_text'] = __( '&laquo;', 'author' );
 		$args['next_text'] = __( '&raquo;', 'author' );
@@ -67,10 +65,6 @@ function child_theme_loop_pagination_args( $args ) {
 add_filter( 'hybopress_hide_page_background', 'child_theme_hide_page_background', 11 );
 
 function child_theme_setup_before_parent() {
-
-	if ( ! defined( 'SCRIPT_DEBUG' ) ) {
-		define( 'SCRIPT_DEBUG', false );
-	}
 }
 
 function child_theme_setup1() {
@@ -195,7 +189,7 @@ function child_register_styles() {
 
 	wp_register_style( 'child-fonts', '//fonts.googleapis.com/css?family=Roboto:300,400' );
 
-	$main_styles = trailingslashit( CHILD_THEME_URI ) . "assets/css/child-style.css";
+	$main_styles = trailingslashit( HYBRID_CHILD_URI ) . "assets/css/child-style.css";
 
 	wp_register_style(
 		sanitize_key(  'child-style' ), esc_url( $main_styles ), array( 'skin' ), PARENT_THEME_VERSION, esc_attr( 'all' )
